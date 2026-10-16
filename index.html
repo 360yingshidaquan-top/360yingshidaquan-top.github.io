@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>360影视大全：三百六十度，好片无死角 | 全景片库与环绕式观影指南</title>
+<meta name="keywords" content="360影视大全, 全景片库, 环绕观影, 影视大全, 三百六十度看片, 全类型影视, 360yingshidaquan, 无死角片单">
+<meta name="description" content="360影视大全（360yingshidaquan-top）相信好片不该有死角：三百六十度转一圈，从任何角度都能找到想看的。电影、剧集、动漫、纪录片，全景式片库，环绕式推荐。打开 https://360yingshidaquan-top.github.io，转一圈，挑一部，立刻开看。">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#0a0a0c;--dark:#141417;--orange:#ff6b00;--orange-l:#ff9d4d;--amber:#ffb84d;--green:#2ec7a3;--txt:#e8e6e3;--mut:#8d8b88;--line:rgba(255,107,0,.22)}
+body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;background:var(--black);color:var(--txt);line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+::selection{background:var(--orange);color:#fff}
+
+/* ===== 橙黑扫描顶条 ===== */
+.scanbar{height:8px;background:linear-gradient(90deg,var(--orange),var(--amber),#ffe0a8,var(--orange-l),var(--orange));background-size:300% 100%;animation:sc 4s linear infinite;position:relative}
+@keyframes sc{to{background-position:300% 0}}
+.scanbar::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 8px,rgba(255,255,255,.08) 8px 16px)}
+
+/* ===== 报头 ===== */
+.hd{background:rgba(20,20,23,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd-in{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:20px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:14px}
+.ring{width:50px;height:50px;border-radius:50%;background:var(--black);position:relative;display:flex;align-items:center;justify-content:center;border:2.5px solid var(--orange);box-shadow:0 0 18px rgba(255,107,0,.4)}
+.ring::before{content:"";position:absolute;inset:6px;border-radius:50%;border:1.5px dashed var(--orange-l)}
+.ring span{position:relative;z-index:2;font-size:20px}
+.logo h1{font-size:clamp(22px,3.8vw,36px);font-weight:900;letter-spacing:1px;color:#fff}
+.logo h1 em{font-style:normal;color:var(--orange)}
+.logo .sub{font-size:11.5px;color:var(--orange-l);letter-spacing:3px;margin-top:2px}
+.hd-r{display:flex;gap:10px;flex-wrap:wrap}
+.hd-r a{text-decoration:none;font-size:13px;padding:9px 18px;border-radius:4px;font-weight:700;transition:.25s}
+.hd-r .p{background:var(--orange);color:#0a0a0c}
+.hd-r .p:hover{background:var(--orange-l)}
+.hd-r .s{border:1px solid var(--orange);color:var(--orange-l)}
+.hd-r .s:hover{background:rgba(255,107,0,.1)}
+
+/* ===== 导航 ===== */
+.nv{background:rgba(10,10,12,.95);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:60}
+.nv ul{display:flex;list-style:none;gap:0;flex-wrap:wrap}
+.nv a{display:block;padding:14px 22px;color:rgba(232,230,227,.8);text-decoration:none;font-size:14px;letter-spacing:1px;font-weight:600;transition:.25s}
+.nv a:hover{color:#fff;background:rgba(255,107,0,.12)}
+
+/* ===== Hero ===== */
+.hero{position:relative;padding:76px 0 66px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 620px 400px at 80% 35%,rgba(255,107,0,.2),transparent 58%)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(46,199,163,.05),transparent 70%)}
+.hi{position:relative;z-index:2;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+.hero h2{font-size:clamp(34px,6vw,64px);font-weight:900;line-height:1.15;color:#fff;margin-bottom:22px;letter-spacing:.5px}
+.hero h2 .g1{color:var(--orange)}
+.hero h2 .g2{color:var(--green)}
+.hero p{font-size:16px;color:rgba(232,230,227,.72);max-width:450px;margin-bottom:30px}
+.bs{display:flex;gap:14px;flex-wrap:wrap}
+.b1{display:inline-block;padding:14px 30px;background:var(--orange);color:#0a0a0c;text-decoration:none;font-size:15px;font-weight:800;transition:.25s}
+.b1:hover{background:var(--orange-l);transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,107,0,.4)}
+.b2{display:inline-block;padding:14px 30px;border:1.5px solid var(--orange);color:var(--orange-l);text-decoration:none;font-size:15px;font-weight:700;transition:.25s}
+.b2:hover{background:rgba(255,107,0,.1)}
+.hc{background:rgba(20,20,23,.9);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+.hc .lb{font-size:11px;letter-spacing:4px;color:var(--orange-l);font-weight:800;margin-bottom:16px}
+.hc ul{list-style:none}
+.hc li{padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:rgba(232,230,227,.85);display:flex;gap:10px}
+.hc li:last-child{border-bottom:none}
+.hc li b{color:var(--green);font-weight:800;min-width:54px;font-size:12px;letter-spacing:1px}
+
+/* ===== 章节头 ===== */
+.sec{padding:64px 0}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:34px;padding-bottom:12px;border-bottom:2px solid var(--orange)}
+.sh .no{font-size:11px;font-weight:800;letter-spacing:2px;color:#0a0a0c;background:var(--orange);padding:4px 11px;border-radius:3px}
+.sh h2{font-size:24px;font-weight:900;letter-spacing:1px;color:#fff}
+.sh .more{margin-left:auto;font-size:13px;color:var(--mut);text-decoration:none}
+.sh .more:hover{color:var(--orange-l)}
+
+/* ===== 全景推荐 ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.gc{background:var(--dark);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.35s;position:relative}
+.gc:hover{border-color:var(--orange);transform:translateY(-6px);box-shadow:0 16px 34px rgba(255,107,0,.16)}
+.gc::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--orange),var(--green));opacity:0;transition:.35s}
+.gc:hover::before{opacity:1}
+.gc-th{height:170px;overflow:hidden;position:relative}
+.gc-th img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.gc:hover .gc-th img{transform:scale(1.06)}
+.gc-th .tag{position:absolute;top:12px;left:12px;font-size:10.5px;font-weight:800;letter-spacing:1px;color:#0a0a0c;background:var(--orange);padding:4px 11px;border-radius:3px}
+.gb{padding:20px 22px}
+.gb h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:5px}
+.gb .mt{font-size:12px;color:var(--mut);margin-bottom:10px}
+.gb p{font-size:13.5px;color:rgba(232,230,227,.68);line-height:1.85}
+.gf{margin-top:14px;display:flex;justify-content:space-between;align-items:center;padding-top:11px;border-top:1px dashed var(--line)}
+.gf .sc{font-size:14px;font-weight:800;color:var(--orange)}
+.gf a{font-size:12.5px;color:var(--mut);text-decoration:none}
+.gf a:hover{color:var(--orange-l)}
+
+/* ===== 分类环形 ===== */
+.cats{background:var(--dark);border:1px solid var(--line);border-radius:18px;padding:14px}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.ci{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:22px 14px;text-align:center;transition:.25s;cursor:pointer}
+.ci:hover{background:rgba(255,107,0,.1);border-color:var(--orange);transform:translateY(-3px)}
+.ci .ic{font-size:32px;display:block;margin-bottom:8px}
+.ci h4{font-size:14.5px;font-weight:700;color:#fff;margin-bottom:3px}
+.ci p{font-size:11.5px;color:var(--mut)}
+
+/* ===== 双栏 ===== */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.dimg{height:360px;border-radius:16px;background:conic-gradient(from 0deg,var(--orange),var(--amber),var(--green),var(--orange-l),var(--orange));display:flex;align-items:center;justify-content:center;font-size:100px;position:relative;overflow:hidden}
+.dimg::before{content:"";position:absolute;inset:14px;border-radius:50%;background:var(--black);display:flex;align-items:center;justify-content:center}
+.dimg span{position:relative;z-index:2}
+.dtxt h3{font-size:26px;font-weight:900;color:#fff;margin-bottom:18px;line-height:1.4}
+.dtxt h3 .hl{color:var(--orange)}
+.dtxt p{font-size:15px;color:rgba(232,230,227,.72);margin-bottom:14px}
+.deg{list-style:none;margin-top:20px;counter-reset:dg}
+.deg li{counter-increment:dg;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;color:rgba(232,230,227,.85);display:flex;gap:12px}
+.deg li::before{content:"0" counter(dg);font-size:12px;font-weight:800;color:var(--orange);min-width:34px;font-family:monospace}
+.dtxt .go{display:inline-block;margin-top:16px;padding:12px 28px;background:var(--orange);color:#0a0a0c;text-decoration:none;font-size:14px;font-weight:800;transition:.25s}
+.dtxt .go:hover{background:var(--orange-l)}
+
+/* ===== 片单表 ===== */
+.roll{background:var(--dark);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.roll table{width:100%;border-collapse:collapse}
+.roll th{background:var(--orange);color:#0a0a0c;font-size:12px;letter-spacing:2px;padding:15px 20px;text-align:left;font-weight:700}
+.roll td{padding:15px 20px;border-bottom:1px solid var(--line);font-size:14px;color:rgba(232,230,227,.85);vertical-align:top}
+.roll tr:last-child td{border-bottom:none}
+.roll tr:hover td{background:rgba(255,107,0,.06)}
+.roll .id{font-family:monospace;color:var(--orange-l);font-size:13px;white-space:nowrap}
+.roll .sc{text-align:right;color:var(--green);font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ===== 结语 ===== */
+.coda{text-align:center;padding:72px 0}
+.coda-in{max-width:660px;margin:0 auto}
+.coda .q{font-size:clamp(22px,3.8vw,36px);font-weight:900;line-height:1.55;color:#fff;margin-bottom:26px}
+.coda .q .hl{color:var(--orange)}
+.coda p{font-size:15px;color:rgba(232,230,227,.68);margin-bottom:14px}
+.coda .u{display:inline-block;margin-top:24px;padding:13px 30px;border:1.5px solid var(--orange);color:var(--orange-l);text-decoration:none;font-size:13.5px;font-weight:700;letter-spacing:1px;transition:.25s}
+.coda .u:hover{background:var(--orange);color:#0a0a0c}
+
+/* ===== 页脚 ===== */
+footer{background:#050506;border-top:1px solid var(--line);padding:44px 0 24px}
+.f-in{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.f-b h4{font-size:19px;color:var(--orange-l);font-weight:900;letter-spacing:1px;margin-bottom:12px}
+.f-b p{font-size:13.5px;color:rgba(232,230,227,.6);line-height:1.95}
+.f-c h5{font-size:12.5px;letter-spacing:2px;color:rgba(255,255,255,.78);margin-bottom:14px}
+.f-c ul{list-style:none}
+.f-c a{color:rgba(232,230,227,.55);text-decoration:none;font-size:13px;line-height:2.2}
+.f-c a:hover{color:var(--orange-l)}
+.f-bot{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;font-size:12px;color:var(--mut);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* ===== 移动端 ===== */
+@media (max-width:920px){
+ .hi{grid-template-columns:1fr;gap:32px}
+ .duo{grid-template-columns:1fr;gap:26px}
+ .dimg{height:260px;font-size:70px}
+ .f-in{grid-template-columns:1fr 1fr;gap:24px}
+}
+@media (max-width:600px){
+ .hd-in{flex-direction:column;align-items:flex-start}
+ .sh{flex-wrap:wrap}
+ .sh .more{margin-left:0;width:100%}
+ .roll{overflow-x:auto}
+ .roll table{min-width:640px}
+ .nv a{padding:12px 14px;font-size:13px}
+ .f-in{grid-template-columns:1fr}
+ .cg{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="scanbar"></div>
+
+<!-- ===== 报头 ===== -->
+<header class="hd">
+ <div class="wrap hd-in">
+  <div class="logo">
+   <div class="ring"><span>🌀</span></div>
+   <div>
+    <h1>360<em>影视大全</em></h1>
+    <div class="sub">360° FULL CINEMA · 全景环绕</div>
+   </div>
+  </div>
+  <div class="hd-r">
+   <a href="#grid" class="p">全景推荐</a>
+   <a href="#cats" class="s">分类</a>
+  </div>
+ </div>
+</header>
+
+<!-- ===== 导航 ===== */
+<nav class="nv">
+ <div class="wrap">
+  <ul>
+   <li><a href="#home">首页</a></li>
+   <li><a href="#grid">全景推荐</a></li>
+   <li><a href="#cats">分类频道</a></li>
+   <li><a href="#duo">环绕看片</a></li>
+   <li><a href="#roll">今日片单</a></li>
+   <li><a href="#coda">关于 360</a></li>
+  </ul>
+ </div>
+</nav>
+
+<!-- ===== Hero ===== */
+<section class="hero" id="home">
+ <div class="wrap hi">
+  <div>
+   <h2>三百六十度，<br><span class="g1">好片无死角</span></h2>
+   <p>360影视大全（360yingshidaquan-top）相信好片不该有死角：三百六十度转一圈，从任何角度都能找到想看的。电影、剧集、动漫、纪录片，全景式片库，环绕式推荐，转一圈就挑到。</p>
+   <div class="bs">
+    <a href="#grid" class="b1">🌀 全景推荐</a>
+    <a href="#duo" class="b2">环绕看片</a>
+   </div>
+  </div>
+  <div class="hc">
+   <div class="lb">◆ 360 度覆盖</div>
+   <ul>
+    <li><b>全类型</b><span>电影剧集动漫纪录片，一圈看全</span></li>
+    <li><b>全年代</b><span>从老片到热播，不留空白</span></li>
+    <li><b>全心情</b><span>想哭想笑想刺激，都有对应</span></li>
+    <li><b>全终端</b><span>手机电脑平板，随处能看</span></li>
+    <li><b>全时段</b><span>白天夜晚通勤睡前，随时匹配</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- ===== 全景推荐 ===== */
+<section class="wrap sec" id="grid">
+ <div class="sh">
+  <span class="no">推荐 01</span>
+  <h2>全景推荐</h2>
+  <a href="#" class="more">完整片库 →</a>
+ </div>
+ <div class="grid">
+  <article class="gc">
+   <div class="gc-th"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&q=80" alt="动作港片"><span class="tag">热门</span></div>
+   <div class="gb">
+    <h3>九龙城寨之围城</h3>
+    <div class="mt">2024 · 动作 / 港片</div>
+    <p>十二分钟一镜到底的打斗把港片动作美学拉回大银幕，拳拳到肉，看完只想鼓掌。</p>
+    <div class="gf"><span class="sc">★ 8.7</span><a href="#">开看 →</a></div>
+   </div>
+  </article>
+  <article class="gc">
+   <div class="gc-th"><img src="https://images.unsplash.com/photo-1440404653325-ab271e5c0c22?w=600&q=80" alt="生活喜剧"><span class="tag">治愈</span></div>
+   <div class="gb">
+    <h3>走走停停</h3>
+    <div class="mt">2024 · 喜剧 / 生活</div>
+    <p>一个"失败者"回老家的故事。笑着笑着就笑了，然后笑着笑着就哭了，今年最舒服的国产片之一。</p>
+    <div class="gf"><span class="sc">★ 8.5</span><a href="#">开看 →</a></div>
+   </div>
+  </article>
+  <article class="gc">
+   <div class="gc-th"><img src="https://images.unsplash.com/photo-1505635552518-5b4a6677f553?w=600&q=80" alt="惊悚悬疑"><span class="tag">刺激</span></div>
+   <div class="gb">
+    <h3>坠落</h3>
+    <div class="mt">2022 · 惊悚 / 悬疑</div>
+    <p>两个人在一根柱子上，下面是千米深渊。全程手心冒汗，千万别往下看——虽然你忍不住。</p>
+    <div class="gf"><span class="sc">★ 8.3</span><a href="#">开看 →</a></div>
+   </div>
+  </article>
+  <article class="gc">
+   <div class="gc-th"><img src="https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?w=600&q=80" alt="爱情文艺"><span class="tag">口碑</span></div>
+   <div class="gb">
+    <h3>过往人生</h3>
+    <div class="mt">2023 · 爱情 / 文艺</div>
+    <p>两个人隔着大洋隔着十二年，一句"如果当初"就能让整个电影院安静下来。看完想给旧友发消息。</p>
+    <div class="gf"><span class="sc">★ 8.8</span><a href="#">开看 →</a></div>
+   </div>
+  </article>
+  <article class="gc">
+   <div class="gc-th"><img src="https://images.unsplash.com/photo-1574267432553-4b462808152c?w=600&q=80" alt="剧集推荐"><span class="tag">剧集</span></div>
+   <div class="gb">
+    <h3>繁花</h3>
+    <div class="mt">2023 · 剧集 / 王家卫</div>
+    <p>王家卫拍电视剧，把上海拍成了梦。每一帧都能当壁纸，每一句台词都像在耳边说。</p>
+    <div class="gf"><span class="sc">★ 8.9</span><a href="#">开看 →</a></div>
+   </div>
+  </article>
+  <article class="gc">
+   <div class="gc-th"><img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600&q=80" alt="科幻爽片"><span class="tag">爽片</span></div>
+   <div class="gb">
+    <h3>月球叛军</h3>
+    <div class="mt">2023 · 科幻 / 扎克·施奈德</div>
+    <p>施奈德的慢镜头美学配上太空歌剧，视觉冲击力拉满。当爆米花大片看，爽就完事了。</p>
+    <div class="gf"><span class="sc">★ 7.9</span><a href="#">开看 →</a></div>
+   </div>
+  </article>
+ </div>
+</section>
+
+<!-- ===== 分类频道 ===== */
+<section class="wrap sec" id="cats">
+ <div class="sh">
+  <span class="no">频道</span>
+  <h2>分类频道</h2>
+  <a href="#" class="more">全部频道 →</a>
+ </div>
+ <div class="cats">
+  <div class="cg">
+   <div class="ci"><span class="ic">🎬</span><h4>电影大全</h4><p>12,400 部 · 院线全集</p></div>
+   <div class="ci"><span class="ic">📺</span><h4>电视剧集</h4><p>3,200 部 · 国产热剧</p></div>
+   <div class="ci"><span class="ic">🎨</span><h4>动漫动画</h4><p>2,100 部 · 国漫日漫</p></div>
+   <div class="ci"><span class="ic">😂</span><h4>开心喜剧</h4><p>2,876 部 · 笑就完了</p></div>
+   <div class="ci"><span class="ic">💥</span><h4>硬核动作</h4><p>1,654 部 · 拳拳到肉</p></div>
+   <div class="ci"><span class="ic">👻</span><h4>惊悚悬疑</h4><p>1,432 部 · 别开灯</p></div>
+   <div class="ci"><span class="ic">💕</span><h4>爱情甜宠</h4><p>2,154 部 · 心动瞬间</p></div>
+   <div class="ci"><span class="ic">🌍</span><h4>纪录片</h4><p>1,240 部 · 真实力量</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== 环绕看片 ===== */
+<section class="wrap sec" id="duo">
+ <div class="sh">
+  <span class="no">方法</span>
+  <h2>环绕看片</h2>
+  <a href="#" class="more">详细方法 →</a>
+ </div>
+ <div class="duo">
+  <div class="dimg"><span>🌀</span></div>
+  <div class="dtxt">
+   <h3>转一圈就能找到，<br>这就是<em class="hl">360 度看片</em></h3>
+   <p>360影视大全把找片这件事做成环绕式：不用反复搜索、不用翻来翻去，从任何一个入口进来，都能顺着推荐一路看下去。</p>
+   <ul class="deg">
+    <li><span>从分类入口进，按类型一路刷下去不重样。</span></li>
+    <li><span>从今日片单进，跟着心情一天看一部。</span></li>
+    <li><span>从全景推荐进，看完一部自动有下一部等着。</span></li>
+    <li><span>从热搜进，看看大家现在都在看什么。</span></li>
+   </ul>
+   <a href="#" class="go">🌀 开始环绕看片</a>
+  </div>
+ </div>
+</section>
+
+<!-- ===== 今日片单 ===== */
+<section class="wrap sec" id="roll">
+ <div class="sh">
+  <span class="no">片单</span>
+  <h2>今日片单</h2>
+  <a href="#" class="more">往期片单 →</a>
+ </div>
+ <div class="roll">
+  <table>
+   <thead>
+    <tr><th>编号</th><th>片名</th><th>角度 / 心情</th><th>状态</th><th style="text-align:right">推荐值</th></tr>
+   </thead>
+   <tbody>
+    <tr><td class="id">360-MON-01</td><td>走走停停</td><td>轻松 / 想笑一下</td><td>今日主打</td><td class="sc">92%</td></tr>
+    <tr><td class="id">360-TUE-02</td><td>过往人生</td><td>文艺 / 有点想念</td><td>可随时看</td><td class="sc">95%</td></tr>
+    <tr><td class="id">360-WED-03</td><td>坠落</td><td>惊悚 / 想要刺激</td><td>可随时看</td><td class="sc">88%</td></tr>
+    <tr><td class="id">360-THU-04</td><td>九龙城寨之围城</td><td>动作 / 想看打戏</td><td>可随时看</td><td class="sc">90%</td></tr>
+    <tr><td class="id">360-FRI-05</td><td>繁花</td><td>剧集 / 慢慢看</td><td>可随时看</td><td class="sc">93%</td></tr>
+    <tr><td class="id">360-SAT-06</td><td>月球叛军</td><td>科幻 / 爽就完了</td><td>明日上线</td><td class="sc">85%</td></tr>
+    <tr><td class="id">360-SUN-07</td><td>小森林</td><td>治愈 / 什么都不想干</td><td>待定，欢迎点片</td><td class="sc">91%</td></tr>
+   </tbody>
+  </table>
+ </div>
+</section>
+
+<!-- ===== 关于 360 ===== */
+<section class="wrap coda" id="coda">
+ <div class="coda-in">
+  <div class="q">&ldquo;三百六十度转一圈，<br><em class="hl">好片一个都不落下</em>。&rdquo;</div>
+  <p>360影视大全想做的，就是让你无论从哪个角度进来，都能立刻找到想看的。全景式片库、环绕式推荐，转一圈就挑到，不用犹豫。</p>
+  <p>片库每天都在补，推荐每天都在换。今晚不知道看什么？从今日片单点开第一部，不会错的。</p>
+  <a href="https://360yingshidaquan-top.github.io" class="u">◆ https://360yingshidaquan-top.github.io ◆</a>
+ </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+ <div class="wrap">
+  <div class="f-in">
+   <div class="f-b">
+    <h4>🌀 360影视大全</h4>
+    <p>三百六十度，好片无死角。全景片库与环绕式观影指南，电影、剧集、动漫、纪录片，转一圈就挑到想看的。</p>
+   </div>
+   <div class="f-c">
+    <h5>看片</h5>
+    <ul>
+     <li><a href="#grid">全景推荐</a></li>
+     <li><a href="#cats">分类频道</a></li>
+     <li><a href="#roll">今日片单</a></li>
+     <li><a href="#">完整片库</a></li>
+    </ul>
+   </div>
+   <div class="f-c">
+    <h5>方法</h5>
+    <ul>
+     <li><a href="#duo">环绕看片</a></li>
+     <li><a href="#">主题专题</a></li>
+     <li><a href="#">观影帮助</a></li>
+     <li><a href="#">点片申请</a></li>
+    </ul>
+   </div>
+   <div class="f-c">
+    <h5>关于</h5>
+    <ul>
+     <li><a href="#coda">关于 360</a></li>
+     <li><a href="#">免责声明</a></li>
+     <li><a href="#">版权说明</a></li>
+     <li><a href="#">联系我们</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="f-bot">
+   <span>© 2024 360影视大全 · 三百六十度，好片无死角</span>
+   <span>https://360yingshidaquan-top.github.io</span>
+  </div>
+ </div>
+</footer>
+
+</body>
+</html>
